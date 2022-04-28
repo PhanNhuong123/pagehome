@@ -2094,7 +2094,10 @@ article .card-service:hover .actions {
    5%{width: 0em;}
     100% { width:  7em; }
 }
-
+.text-content h4{
+  opacity: 0;
+  height: 24px;
+}
 #animationloading {
   position: absolute;
   top: -12%;

@@ -291,6 +291,7 @@
                   <h1></h1>
                   <h4>
                     <!-- We connect all developers in the world to build global team. -->
+                    
                   </h4>
                   <div class="wrap-btn">
                     <a class="btn">
@@ -2736,7 +2737,9 @@
           //   showCursor: false,
           //   loop: false,
           // });
-     setTimeout(() =>{  let typed4 = new Typed(".text-content h4", {
+     setTimeout(() =>{  
+       
+      let typed4 = new Typed(".text-content h4", {
             strings: [
               "",
               "We connect all developers in the world to build global team.",
@@ -2746,6 +2749,8 @@
             loop: false
           
           });
+      document.querySelector('.text-content h4').style.opacity = 1
+
 }, 2100)
           gsap.to(stick, {
             opacity: 0,
