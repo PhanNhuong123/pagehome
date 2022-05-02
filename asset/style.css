@@ -973,6 +973,20 @@ hr.solid {
   border-bottom: solid #0855F8 1px;
   margin: 0 12%;
 }
+.section-how .item-team .how-step .division:nth-child(1) {
+
+  border-bottom: solid #f2b90d 3px;
+  position: absolute;
+  top: 39px;
+  left: 0;
+  right: 0;
+}
+/* .section-how .item-team .how-step .division::after{
+position: relative;
+content: " ";
+width: 100px;
+background-color: red;
+} */
 
 .section-how .item-team .how-step .wrap-image {
   position: absolute;
@@ -2262,6 +2276,16 @@ article .card-service:hover .actions {
   z-index: 10;
 }
 
+.pt-4 .col-md-3.text-center.item-team:nth-child(1) .card ,
+.pt-4 .col-md-3.text-center.item-team:nth-child(2) .card ,
+.pt-4 .col-md-3.text-center.item-team:nth-child(3) .card ,
+.pt-4 .col-md-3.text-center.item-team:nth-child(4) .card 
+{
+/* filter: blur(3px) */
+}
+.pt-4 .col-md-3.text-center.item-team .card{
+  overflow: hidden;
+}
 .pt-4 .col-md-3.text-center.item-team .card:hover img {
   transition: linear 0.3s;
   transform: rotate(8deg) scale(1.05);
@@ -2270,6 +2294,18 @@ article .card-service:hover .actions {
 
   transform:  scale(1.05) !important;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+.pt-4 .col-md-3.text-center.item-team .card .after{
+  
+  position: absolute;
+  top: 110%;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  background-color:  rgba(255, 255, 255, 0.82);
+  z-index: 2;
+  border-top: 2px solid #0855F8;
 }
 
 #effect {
