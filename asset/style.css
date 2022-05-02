@@ -292,11 +292,13 @@ body {
 
 .wrap-btn {
   margin-top: 64px;
-  background-color: #F2B90D;
+  background-color: #fff;
   line-height: 1.5;
-  border-radius: 0.25rem;
+  border-radius: 99rem;
   width: 200px;
   height: 66px;
+  overflow: hidden;
+
 }
 
 @media only screen and (max-width: 1023px) {
@@ -308,16 +310,38 @@ body {
 }
 
 .wrap-btn a.btn {
+
   position: relative;
+  text-align: center;
+  line-height: 3.2em;
   font-size: 16px;
   font-weight: bold;
-  padding: 20px 30px 20px 60px;
+  width: inherit;
+  height: inherit;
   color: #1E1E1E;
-  border-radius: 0.25rem 0 0 0.25rem;
-}
+  border-radius: inherit;
+  z-index: 1;
 
+}
+/* 
 .wrap-btn a.btn:hover {
   background-color: #fff;
+} */
+.wrap-btn a.btn::after{
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  content: " ";
+  background-color: #F2B90D;
+  width: inherit;
+  height: inherit;
+  z-index: -1;
+  border-radius: inherit;
+  transition: ease-in-out 0.2s;
+}
+
+a.btn:hover::after{
+  left: 140px;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -327,15 +351,16 @@ body {
 }
 
 .wrap-btn a.btn i {
-  right: -29px;
+  top: 1.2em ;
+  right: 0;
   position: absolute;
   width: 24px;
   height: 24px;
-  background: transparent url("assets/images/icons/arrow-right-back.png") no-repeat center;
+  background: transparent url("assets/images/icons/arrow-right.png") no-repeat center;
 }
 
 .wrap-btn-blue {
-  background-color: #0EC9F2;
+  background-color: #0855F8;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -348,7 +373,6 @@ body {
 
 .wrap-btn-blue a.btn {
   color: #fff;
-  padding: 20px 50px 20px 60px;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -356,9 +380,12 @@ body {
     padding: 8px 40px 8px 40px;
   }
 }
-
+/* 
 .wrap-btn-blue a.btn:hover {
   background-color: #0855F8;
+} */
+.wrap-btn-blue a.btn::after{
+  background-color: #0EC9F2;
 }
 
 .wrap-btn-blue a.btn i {
@@ -397,9 +424,9 @@ body {
   background-color: #f2b90d;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   animation: widthChange 5s infinite forwards;
-  -moz-animation: widthChange 5s  forwards;
-  -webkit-animation: widthChange 5s  forwards;
-  -o-animation: widthChange 5s  forwards;
+  -moz-animation: widthChange 5s forwards;
+  -webkit-animation: widthChange 5s forwards;
+  -o-animation: widthChange 5s forwards;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -642,9 +669,11 @@ hr.solid {
 .section-banner .wrap-banner-content .text-content {
   max-width: 800px;
 }
-.wrap-banner-content .text-content h1{
+
+.wrap-banner-content .text-content h1 {
   /* height: 48px */
 }
+
 /* @media screen and (max-width: 1023px){
   
 } */
@@ -652,11 +681,13 @@ hr.solid {
   font-size: 60px;
   height: 55px;
 }
+
 @media only screen and (max-width: 1023px) {
   .section-banner .wrap-banner-content .text-content {
     max-width: 300px;
   }
-  .wrap-banner-content .text-content h1{
+
+  .wrap-banner-content .text-content h1 {
     height: 30px
   }
 }
@@ -2089,15 +2120,26 @@ article .card-service:hover .actions {
 .container> :nth-child(1) {
   position: relative;
 }
+
 @keyframes widthChange {
-  0% { with: 0em }
-   5%{width: 0em;}
-    100% { width:  7em; }
+  0% {
+    with: 0em
+  }
+
+  5% {
+    width: 0em;
+  }
+
+  100% {
+    width: 7em;
+  }
 }
-.text-content h4{
+
+.text-content h4 {
   opacity: 0;
   height: 24px;
 }
+
 #animationloading {
   position: absolute;
   top: -12%;
@@ -2106,19 +2148,22 @@ article .card-service:hover .actions {
   bottom: 36%;
   /* overflow: hidden; */
 }
+
 #animationloading ul {
   position: absolute;
   top: -8%;
   left: 18%;
   display: block;
 }
+
 @media only screen and (min-width: 1024) {
-  .wrap-banner-content .text-content h1{
+  .wrap-banner-content .text-content h1 {
     height: 46px;
   }
 }
-#animationloading .animation_stick{
-  position: absolute ;
+
+#animationloading .animation_stick {
+  position: absolute;
   /* opacity: 0; */
   bottom: -14px;
   display: none;
@@ -2127,6 +2172,7 @@ article .card-service:hover .actions {
   height: 10px;
   background-color: #fff;
 }
+
 #animationloading .ball {
   position: absolute;
   transform-origin: 50% 50%;
@@ -2137,32 +2183,35 @@ article .card-service:hover .actions {
   width: 20px;
   height: 20px;
   border-left: 2px solid red;
-  transition: all ease-in-out ;
+  transition: all ease-in-out;
   border-radius: 50%;
 }
-#animationloading .ball:nth-child(1){
- 
+
+#animationloading .ball:nth-child(1) {
+
 
   width: 40px;
   height: 40px;
-  border-left: 2px solid  #0EC9F2;
+  border-left: 2px solid #0EC9F2;
 }
-#animationloading .ball:nth-child(2){
+
+#animationloading .ball:nth-child(2) {
   top: -13px;
   left: -6.2px;
   /* top:6vh;
   left: 42.2vw; */
   width: 67px;
   height: 67px;
- 
-  border-left: 2px solid  #f2b90d
+
+  border-left: 2px solid #f2b90d
 }
-#animationloading .ball:nth-child(3){
+
+#animationloading .ball:nth-child(3) {
   top: -30px;
   left: -23px;
   width: 100px;
   height: 100px;
- 
+
   border-left: 2px solid #ffffff;
 }
 
