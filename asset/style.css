@@ -341,12 +341,15 @@ body {
 }
 
 a.btn:hover::after{
-  left: 140px;
+  left: 136px;
 }
 
 @media only screen and (max-width: 1023px) {
   .wrap-btn a.btn {
-    padding: 8px 20px 8px 40px;
+    line-height: 1.7em;
+  }
+  a.btn:hover::after{
+    left: 120px;
   }
 }
 
@@ -2251,8 +2254,23 @@ article .card-service:hover .actions {
 
 
 }
+/* animation how we do  */
+.fireworks{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+}
 
+.pt-4 .col-md-3.text-center.item-team .card:hover img {
+  transition: linear 0.3s;
+  transform: rotate(8deg) scale(1.05);
+}.pt-4 .col-md-3.text-center.item-team .card:hover{
+  transition: linear 0.3s;
 
+  transform:  scale(1.05) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
 
 #effect {
   position: fixed;

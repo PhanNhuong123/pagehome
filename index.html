@@ -162,7 +162,7 @@
             )(window, document); -->
     <!-- </script> -->
   </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
   <body
     class="home page-template page-template-front-page page-template-front-page-php page page-id-6"
@@ -291,7 +291,6 @@
                   <h1></h1>
                   <h4>
                     <!-- We connect all developers in the world to build global team. -->
-                    
                   </h4>
                   <div class="wrap-btn">
                     <a class="btn">
@@ -407,6 +406,7 @@
             <div class="row">
               <div class="col-md-12 text-center">
                 <div class="head-title">How we do?</div>
+                <canvas class="fireworks"></canvas>
                 <hr class="solid" />
               </div>
             </div>
@@ -2320,24 +2320,24 @@
           </div>
         </div>
         <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            var menu = document.getElementById("effect");
-            var status = "underX";
-            window.addEventListener("scroll", function () {
-              var x = pageYOffset;
-              if (x > 200) {
-                if (status == "underX") {
-                  status = "aboveX";
-                  menu.style.display = "block";
-                }
-              } else {
-                if (status == "aboveX") {
-                  menu.style.display = "none";
-                  status = "underX";
-                }
-              }
-            });
-          });
+          // document.addEventListener("DOMContentLoaded", function () {
+          //   var menu = document.getElementById("effect");
+          //   var status = "underX";
+          //   window.addEventListener("scroll", function () {
+          //     var x = pageYOffset;
+          //     if (x > 200) {
+          //       if (status == "underX") {
+          //         status = "aboveX";
+          //         menu.style.display = "block";
+          //       }
+          //     } else {
+          //       if (status == "aboveX") {
+          //         menu.style.display = "none";
+          //         status = "underX";
+          //       }
+          //     }
+          //   });
+          // });
           const banner = document.getElementsByClassName("banner")[0];
           const blocks = document.getElementsByClassName("blocks");
           for (let i = 1; i < 400; i++) {
@@ -2556,6 +2556,8 @@
       src="https://gotechjsc.com/wp-includes/js/wp-embed.min.js?ver=5.8.2"
       id="wp-embed-js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- <script src="./asset/anime.min.js"></script> -->
     <script type="text/javascript">
       (function () {
         var expirationDate = new Date();
@@ -2577,16 +2579,16 @@
       console.log(img);
       gsap.from(img, {
         rotate: -1080,
-        duration: 5,
-        ease: "back.out(2.3)",
+        duration: 6,
+        ease: "back.out(1.4)",
         y: -1000,
         x: 1200,
       });
       var width = $(window).width();
       var height = $(window).height();
       var mobile = width <= 1023;
-      let d = 0.5
-      let t = 0.5
+      let d = 0.5;
+      let t = 0.5;
       let y1, y2, y3, x1, x2, x3;
       if (!mobile) {
         y1 = 258;
@@ -2607,14 +2609,19 @@
       gsap.fromTo(
         wrapBall1,
         { rotate: -490 },
-        { rotate: 0, duration: 3*t, ease: "linear", onComplete: handleLoading }
+        {
+          rotate: 0,
+          duration: 3 * t,
+          ease: "linear",
+          onComplete: handleLoading,
+        }
       );
       console.log(y1, mobile);
       gsap.to(wrapBall1, {
         y: y1,
         x: x1,
-        duration: 1.3*t,
-        delay: 2.99*d,
+        duration: 1.3 * t,
+        delay: 2.99 * d,
         ease: "linear",
         onComplete: handleStick,
       });
@@ -2622,13 +2629,13 @@
       gsap.fromTo(
         wrapBall2,
         { rotate: -220 },
-        { rotate: 180, duration: 3*t, ease: "linear" }
+        { rotate: 180, duration: 3 * t, ease: "linear" }
       );
       gsap.to(wrapBall2, {
         x: x2,
         y: y2,
-        duration: 0.9*t,
-        delay: 2.99*d,
+        duration: 0.9 * t,
+        delay: 2.99 * d,
         ease: "linear",
       });
 
@@ -2636,43 +2643,41 @@
       gsap.fromTo(
         wrapBall3,
         { rotate: 50 },
-        { rotate: 360, duration: 3*t, ease: "linear" }
+        { rotate: 360, duration: 3 * t, ease: "linear" }
       );
       gsap.to(wrapBall3, {
         y: y3,
         x: x3,
-        duration: 0.62*t,
-        delay: 2.99*d,
+        duration: 0.62 * t,
+        delay: 2.99 * d,
         ease: "linear",
       });
 
       function handleLoading() {
         gsap.to(wrapBall1, 0.4, { borderRadius: 0, ease: "linear " });
-        gsap.to(wrapBall1, 0.6, { height: 30, ease: "linear ", delay: 0.2*d });
-        gsap.to(wrapBall1, 0.6, { height: 0, ease: "linear ", delay: 1.3*d });
+        gsap.to(wrapBall1, 0.6, {
+          height: 30,
+          ease: "linear ",
+          delay: 0.2 * d,
+        });
+        gsap.to(wrapBall1, 0.6, { height: 0, ease: "linear ", delay: 1.3 * d });
         gsap.to(wrapBall2, 0.4, { borderRadius: 0, ease: "linear" });
-        gsap.to(wrapBall2, 0.6, { height: 30, ease: "linear ", delay: 0.2*d });
-        gsap.to(wrapBall2, 0.6, { height: 0, ease: "linear ", delay: 1.3*d });
+        gsap.to(wrapBall2, 0.6, {
+          height: 30,
+          ease: "linear ",
+          delay: 0.2 * d,
+        });
+        gsap.to(wrapBall2, 0.6, { height: 0, ease: "linear ", delay: 1.3 * d });
         gsap.to(wrapBall3, 0.4, { borderRadius: 0, ease: "linear" });
-        gsap.to(wrapBall3, 0.6, { height: 30, ease: "linear ", delay: 0.2*d });
-        gsap.to(wrapBall3, 0.6, { height: 0, ease: "linear ", delay: 1.3*d });
+        gsap.to(wrapBall3, 0.6, {
+          height: 30,
+          ease: "linear ",
+          delay: 0.2 * d,
+        });
+        gsap.to(wrapBall3, 0.6, { height: 0, ease: "linear ", delay: 1.3 * d });
       }
       function handleStick() {
         let stick = document.getElementsByClassName("animation_stick")[0];
-        // setTimeout(() => {
-        //   let show = setInterval(handleOpa, 10);
-        //   let opa = 1;
-        //   function handleOpa() {
-        //     wrapBall1.style.display = "none";
-        //     wrapBall2.style.display = "none";
-        //     if (opa <= 0) {
-        //       clearInterval(show);
-        //     } else {
-        //       opa = opa - 0.1;
-        //       wrapBall3.style.opacity = opa + "";
-        //     }
-        //   }
-        // }, 400);
         console.log(stick.style);
         stick.style.display = "block";
         let left = 14;
@@ -2721,37 +2726,19 @@
             loop: false,
             showCursor: false,
           });
-          // let typed2 = new Typed(".text-content h1:nth-child(2)", {
-          //   strings: [
-          //     "",
-          //     "GOTECH `&nbsp;``<span class='height-light-text'>`GLOBAL TEAM`</span>`",
-          //   ],
-          //   typeSpeed: 50,
-          //   showCursor: false,
-          //   loop: false,
-          // });
 
-          // let typed3 = new Typed(".text-content h1:nth-child(3)", {
-          //   strings: ["FAST `&` FLEXIBLE"],
-          //   typeSpeed: 50,
-          //   showCursor: false,
-          //   loop: false,
-          // });
-     setTimeout(() =>{  
-       
-      let typed4 = new Typed(".text-content h4", {
-            strings: [
-              "",
-              "We connect all developers in the world to build global team.",
-            ],
-            typeSpeed: 30,
-            showCursor: false,
-            loop: false
-          
-          });
-      document.querySelector('.text-content h4').style.opacity = 1
-
-}, 2100)
+          setTimeout(() => {
+            let typed4 = new Typed(".text-content h4", {
+              strings: [
+                "",
+                "We connect all developers in the world to build global team.",
+              ],
+              typeSpeed: 30,
+              showCursor: false,
+              loop: false,
+            });
+            document.querySelector(".text-content h4").style.opacity = 1;
+          }, 2100);
           gsap.to(stick, {
             opacity: 0,
             rotate: -130,
@@ -2760,6 +2747,325 @@
           });
         }
       }
+
+      // let body = document.querySelector('body')
+      // // body.onscroll = handleScrollHowWeDo
+
+      // window.addEventListener('scroll', e => handleScrollHowWeDo(e))
+      // function handleScrollHowWeDo(e){
+      //   let y = window.scrollY
+      //   console.log(y = 1390)
+      //   if (y = 1390){
+      //     e.preventDefault()
+      //     animaHowWeDo()
+
+      //   }
+      // }
+
+      let time = 1;
+      let steps = document.querySelectorAll(
+        ".pt-4 .col-md-3.text-center.item-team"
+      );
+      let stepCards = document.querySelectorAll(
+        ".pt-4 .col-md-3.text-center.item-team .card"
+      );
+      let stepNums = document.querySelectorAll(".how-step-custom .col-md-3");
+      console.log(stepNums);
+      let stepLeft = -500;
+      let stickStep = document.querySelector(
+        ".section-how .item-team .how-step"
+      );
+      stickStep.style.transformOrigin = "0 0";
+
+      gsap.from(stickStep, {
+        scrollTrigger: {
+          trigger: steps[0],
+          start: "top center",
+        },
+        width: 0,
+
+        duration: time,
+        ease: "power1.out",
+      });
+
+      // 1
+      gsap.from(steps[0], {
+        scrollTrigger: {
+          trigger: steps[0],
+          start: "top center",
+        },
+        left: 0 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+      gsap.from(stepNums[0], {
+        scrollTrigger: {
+          trigger: steps[0],
+          start: "top center",
+        },
+        left: 0 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+      // 2
+
+      gsap.from(steps[1], {
+        scrollTrigger: {
+          trigger: steps[1],
+          start: "top center",
+        },
+        left: -250 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+      gsap.from(stepNums[1], {
+        scrollTrigger: {
+          trigger: steps[1],
+          start: "top center",
+        },
+        left: -250 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+
+      //3
+      gsap.from(steps[2], {
+        scrollTrigger: {
+          trigger: steps[2],
+          start: "top center",
+        },
+        left: -500 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+      gsap.from(stepNums[2], {
+        scrollTrigger: {
+          trigger: steps[2],
+          start: "top center",
+        },
+        left: -500 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+
+      //4
+      gsap.from(steps[3], {
+        scrollTrigger: {
+          trigger: steps[3],
+          start: "top center",
+        },
+        left: -750 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+      });
+      gsap.from(stepNums[3], {
+        scrollTrigger: {
+          trigger: steps[3],
+          start: "top center",
+        },
+        left: -750 + stepLeft,
+        duration: time,
+        ease: "power1.out",
+        onComplete: handleShadow,
+      });
+      function handleShadow() {
+        console.log("hi");
+        let tl = gsap.timeline({delay: 0.2});
+        let boxShadow = "rgba(0, 0, 0, 0.1) 0px 4px 12px";
+        let boxShadow0 = "rgba(0, 0, 0, 0.1) 0px 0px 0px";
+
+        tl.to(stepCards[0], {
+          boxShadow: boxShadow,
+          duration: 0.6,
+          scale : 1.05
+
+        });
+        tl.to(stepCards[0], {
+          boxShadow: boxShadow0,
+          duration: 0.6,
+          scale : 1
+        });
+
+        tl.to(stepCards[1], {
+          boxShadow: boxShadow,
+          duration: 0.6,
+          scale: 1.05
+        });
+        tl.to(stepCards[1], {
+          boxShadow: boxShadow0,
+          duration: 0.6,
+          scale: 1
+        });
+
+        tl.to(stepCards[2], {
+          boxShadow: boxShadow,
+          scale: 1.05,
+          duration: 0.6,
+        });
+        tl.to(stepCards[2], {
+          boxShadow: boxShadow0,
+          scale: 1,
+          duration: 0.6,
+        });
+
+        tl.to(stepCards[3], {
+          boxShadow: boxShadow,
+          scale: 1.05,
+          duration: 0.6,
+        });
+        tl.to(stepCards[3], {
+          boxShadow: boxShadow0,
+          scale: 1,
+          duration: 0.6,
+        });
+      }
+      // let fireworks = (function () {
+
+      //   var getFontSize = function () {
+      //     return parseFloat(
+      //       getComputedStyle(document.documentElement).fontSize
+      //     );
+      //   };
+
+      //   var canvas = document.querySelector(".fireworks");
+      //   var ctx = canvas.getContext("2d");
+      //   var numberOfParticules = 24;
+      //   var distance = 200;
+      //   var x = 0;
+      //   var y = 0;
+      //   var animations = [];
+
+      //   var setCanvasSize = function () {
+      //     canvas.width = window.innerWidth;
+      //     canvas.height = window.innerHeight;
+      //   };
+
+      //   var updateCoords = function (e) {
+      //     x = e.clientX || e.touches[0].clientX;
+      //     y = e.clientY || e.touches[0].clientY;
+      //   };
+
+      //   var colors = ["#FF324A", "#31FFA6", "#206EFF", "#FFFF99"];
+
+      //   var createCircle = function (x, y) {
+      //     var p = {};
+      //     p.x = x;
+      //     p.y = y;
+      //     p.color = colors[anime.random(0, colors.length - 1)];
+      //     p.color = "#FFF";
+      //     p.radius = 0;
+      //     p.alpha = 1;
+      //     p.lineWidth = 6;
+      //     p.draw = function () {
+      //       ctx.globalAlpha = p.alpha;
+      //       ctx.beginPath();
+      //       ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+      //       ctx.lineWidth = p.lineWidth;
+      //       ctx.strokeStyle = p.color;
+      //       ctx.stroke();
+      //       ctx.globalAlpha = 1;
+      //     };
+      //     return p;
+      //   };
+
+      //   var createParticule = function (x, y) {
+      //     var p = {};
+      //     p.x = x;
+      //     p.y = y;
+      //     p.color = colors[anime.random(0, colors.length - 1)];
+      //     p.radius = anime.random(getFontSize(), getFontSize() * 2);
+      //     p.draw = function () {
+      //       ctx.beginPath();
+      //       ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+      //       ctx.fillStyle = p.color;
+      //       ctx.fill();
+      //     };
+      //     return p;
+      //   };
+
+      //   var createParticles = function (x, y) {
+      //     var particules = [];
+      //     for (var i = 0; i < numberOfParticules; i++) {
+      //       var p = createParticule(x, y);
+      //       particules.push(p);
+      //     }
+      //     return particules;
+      //   };
+
+      //   var removeAnimation = function (animation) {
+      //     var index = animations.indexOf(animation);
+      //     if (index > -1) animations.splice(index, 1);
+      //   };
+
+      //   var animateParticules = function (x, y) {
+      //     setCanvasSize();
+      //     var particules = createParticles(x, y);
+      //     var circle = createCircle(x, y);
+      //     var particulesAnimation = anime({
+      //       targets: particules,
+      //       x: function (p) {
+      //         return p.x + anime.random(-distance, distance);
+      //       },
+      //       y: function (p) {
+      //         return p.y + anime.random(-distance, distance);
+      //       },
+      //       radius: 0,
+      //       duration: function () {
+      //         return anime.random(1200, 1800);
+      //       },
+      //       easing: "easeOutExpo",
+      //       complete: removeAnimation,
+      //     });
+      //     var circleAnimation = anime({
+      //       targets: circle,
+      //       radius: function () {
+      //         return anime.random(getFontSize() * 8.75, getFontSize() * 11.25);
+      //       },
+      //       lineWidth: 0,
+      //       alpha: {
+      //         value: 0,
+      //         easing: "linear",
+      //         duration: function () {
+      //           return anime.random(400, 600);
+      //         },
+      //       },
+      //       duration: function () {
+      //         return anime.random(1200, 1800);
+      //       },
+      //       easing: "easeOutExpo",
+      //       complete: removeAnimation,
+      //     });
+      //     animations.push(particulesAnimation);
+      //     animations.push(circleAnimation);
+      //   };
+
+      //   var mainLoop = anime({
+      //     duration: Infinity,
+      //     update: function () {
+      //       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //       animations.forEach(function (anim) {
+      //         anim.animatables.forEach(function (animatable) {
+      //           animatable.target.draw();
+      //         });
+      //       });
+      //     },
+      //   });
+
+      //   document.addEventListener(
+      //     tap,
+      //     function (e) {
+      //       updateCoords(e);
+      //       animateParticules(x, y);
+      //     },
+      //     false
+      //   );
+
+      //   window.addEventListener("resize", setCanvasSize, false);
+
+      //   return {
+      //     boom: animateParticules,
+      //   };
+      // })();
     </script>
   </body>
 </html>
