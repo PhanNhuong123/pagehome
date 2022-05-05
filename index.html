@@ -2062,9 +2062,7 @@
             left: 0 + stepLeft,
             opacity: 0,
             ease: "linear",
-            onComplete: () => {
-                stepNumImgs[0].style.filter = "hue-rotate(210deg)";
-            },
+            
         });
         // gsap.from(stepCards[0], {
         //   scrollTrigger: {
@@ -2075,14 +2073,19 @@
         //   opacity: 0,
         //   ease: "linear",
         // });
-        gsap.from(cardAfter[0], {
+        gsap.to(cardAfter[0], {
             scrollTrigger: {
                 trigger: steps[0],
                 start: "top center",
             },
-            top: 0,
+            y: 300,
+            duration: 0.6,
             ease: "linear",
             delay: 1,
+            onComplete: () => {
+                stepNumImgs[0].style.filter = "hue-rotate(210deg)";
+                cardAfter[0].style.display = "none";
+            },
         });
         // 2
 
@@ -2106,16 +2109,18 @@
             opacity: 0,
         });
 
-        gsap.from(cardAfter[1], {
+        gsap.to(cardAfter[1], {
             scrollTrigger: {
                 trigger: steps[0],
                 start: "top center",
             },
             ease: "linear",
-            top: 0,
+            y: 300,
             delay: 2.7,
+            duration: 0.6,
             onComplete: () => {
                 stepNumImgs[1].style.filter = "hue-rotate(210deg)";
+                cardAfter[1].style.display = "none";
             },
         });
         //3
@@ -2141,16 +2146,18 @@
             },
         });
 
-        gsap.from(cardAfter[2], {
+        gsap.to(cardAfter[2], {
             scrollTrigger: {
                 trigger: steps[0],
                 start: "top center",
             },
-            top: 0,
+            top: 300,
             ease: "linear",
+            duration: 0.6,
             delay: 4.7,
             onComplete: () => {
                 stepNumImgs[2].style.filter = "hue-rotate(210deg)";
+                cardAfter[2].style.display = "none";
             },
         });
 
@@ -2175,16 +2182,18 @@
             onComplete: handleAnimation,
             opacity: 0,
         });
-        gsap.from(cardAfter[3], {
+        gsap.to(cardAfter[3], {
             scrollTrigger: {
                 trigger: steps[0],
                 start: "top center",
             },
-            top: 0,
+            top: 300,
             ease: "linear",
+            duration: 0.6,
             delay: 6.8,
             onComplete: () => {
                 stepNumImgs[3].style.filter = "hue-rotate(210deg)";
+                cardAfter[3].style.display = "none";
             },
         });
 
