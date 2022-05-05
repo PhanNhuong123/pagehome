@@ -288,7 +288,7 @@ body {
     background: transparent url("./assets/images/icons/twitter-blue.png") 0 0 no-repeat;
     opacity: unset;
 }
-
+ /* hover btn nhuong */
 .wrap-btn {
     margin-top: 64px;
     background-color: #fff;
@@ -396,7 +396,7 @@ a.btn:hover::after {
 .wrap-btn-blue a.btn i {
     background: transparent url("assets/images/icons/arrow-right.png") no-repeat center;
 }
-
+/* end */
 .clearBoth {
     clear: both;
     width: 100%;
@@ -2361,14 +2361,8 @@ article .card-service:hover .actions {
 }
 
 
-/* animation how we do  */
+/* animation how we do nhuong */
 
-.fireworks {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    z-index: 10;
-}
 
 .pt-4 .col-md-3.text-center.item-team:nth-child(1) .card,
 .pt-4 .col-md-3.text-center.item-team:nth-child(2) .card,
@@ -2414,7 +2408,7 @@ article .card-service:hover .actions {
     bottom: 0;
     display: none;
 }
-
+/* animation how we do nhuong end */
 .block1 {
     background-color: red;
     width: 95px;
