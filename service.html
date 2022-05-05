@@ -4949,14 +4949,16 @@
                         .classList.remove("axis_active"); {
                         {
                             /*  document
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .getElementById("primary")
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .classList.remove("primary_active");  */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .getElementById("primary")
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .classList.remove("primary_active");  */
                         }
                     }
                     status = "underX";
                 }
             }
         });
+
+        // JS Firefly
 
         const FIREFLIES = 30;
         const maxHeight = 600;
@@ -5025,16 +5027,16 @@
 
         // Cursor effect
 
-        const cursor = document.querySelectorAll(".cursor");
-        const arrEntry_title = document.querySelectorAll(".entry-title");
-        for (var i = 0; i < arrEntry_title.length; i++) {
-            arrEntry_title[i].onmouseover = function() {
-                document.addEventListener("mousemove", (e) => {
-                    cursor[i].style.left = e.pageX + "px";
-                    cursor[i].style.top = e.pageY + "px";
-                });
-            };
-        }
+        /*const cursor = document.querySelectorAll(".cursor");
+            const arrEntry_title = document.querySelectorAll(".entry-title");
+            for (var i = 0; i < arrEntry_title.length; i++) {
+                arrEntry_title[i].onmouseover = function() {
+                    document.addEventListener("mousemove", (e) => {
+                        cursor[i].style.left = e.pageX + "px";
+                        cursor[i].style.top = e.pageY + "px";
+                    });
+                };
+            }*/
 
         // Background Main
 
