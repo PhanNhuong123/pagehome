@@ -2064,22 +2064,14 @@
             ease: "linear",
             
         });
-        // gsap.from(stepCards[0], {
-        //   scrollTrigger: {
-        //     trigger: steps[0],
-        //     start: "top center",
-        //   },
-        //   left: 0 + stepLeft,
-        //   opacity: 0,
-        //   ease: "linear",
-        // });
+
         gsap.to(cardAfter[0], {
             scrollTrigger: {
                 trigger: steps[0],
                 start: "top center",
             },
             y: 300,
-            duration: 0.6,
+            duration: 1,
             ease: "linear",
             delay: 1,
             onComplete: () => {
@@ -2117,7 +2109,7 @@
             ease: "linear",
             y: 300,
             delay: 2.7,
-            duration: 0.6,
+            duration: 1,
             onComplete: () => {
                 stepNumImgs[1].style.filter = "hue-rotate(210deg)";
                 cardAfter[1].style.display = "none";
@@ -2141,9 +2133,9 @@
             left: -510 + stepLeft,
             duration: 4,
             ease: "linear",
-            onComplete: () => {
-                console.log("cai 33333333");
-            },
+            // onComplete: () => {
+            //     console.log("cai 33333333");
+            // },
         });
 
         gsap.to(cardAfter[2], {
@@ -2151,9 +2143,9 @@
                 trigger: steps[0],
                 start: "top center",
             },
-            top: 300,
+            y: 300,
             ease: "linear",
-            duration: 0.6,
+            duration: 1,
             delay: 4.7,
             onComplete: () => {
                 stepNumImgs[2].style.filter = "hue-rotate(210deg)";
@@ -2187,9 +2179,9 @@
                 trigger: steps[0],
                 start: "top center",
             },
-            top: 300,
+            y: 300,
             ease: "linear",
-            duration: 0.6,
+            duration: 1,
             delay: 6.8,
             onComplete: () => {
                 stepNumImgs[3].style.filter = "hue-rotate(210deg)";
@@ -2248,7 +2240,6 @@
                 duration: 0.6,
             });
         }
-        // animation blur
     </script>
 </body>
 

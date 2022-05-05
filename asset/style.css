@@ -2402,6 +2402,8 @@ article .card-service:hover .actions {
     background-color: rgba(255, 255, 255, 0.82);
     z-index: 2;
     border-top: 2px solid #0855F8;
+    -webkit-animation: linear;
+    -webkit-transition: linear;
 }
 
 #effect {
