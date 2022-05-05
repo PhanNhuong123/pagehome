@@ -491,9 +491,7 @@
                                     <div class="card-title">App development</div>
                                     <div class="card-subtitle">
                                         アプリ開発経験は豊富で設計からリリース後（保持作業）まで担当させていただきます。 得意
-                                        <br /> ・iOS Native<br /> ・Android Native<br /> ・React Native<br /> ・Flutter
-                                        <br /> ・Xamarin
-                                        <br />・Ionic
+                                        <br /> ・iOS Native<br /> ・Android Native<br /> ・React Native<br /> ・Flutter <br /> ・Xamarin <br />・Ionic
                                     </div>
                                 </div>
                             </div>
@@ -1803,7 +1801,7 @@
         //ball 1
         gsap.fromTo(
             wrapBall1, {
-                rotate: -490
+                rotate: -490,
             }, {
                 rotate: 0,
                 duration: 3 * t,
@@ -1823,11 +1821,11 @@
         //ball 2
         gsap.fromTo(
             wrapBall2, {
-                rotate: -220
+                rotate: -220,
             }, {
                 rotate: 180,
                 duration: 3 * t,
-                ease: "linear"
+                ease: "linear",
             }
         );
         gsap.to(wrapBall2, {
@@ -1841,11 +1839,11 @@
         //ball 3
         gsap.fromTo(
             wrapBall3, {
-                rotate: 50
+                rotate: 50,
             }, {
                 rotate: 360,
                 duration: 3 * t,
-                ease: "linear"
+                ease: "linear",
             }
         );
         gsap.to(wrapBall3, {
@@ -1859,7 +1857,7 @@
         function handleLoading() {
             gsap.to(wrapBall1, 0.4, {
                 borderRadius: 0,
-                ease: "linear "
+                ease: "linear ",
             });
             gsap.to(wrapBall1, 0.6, {
                 height: 30,
@@ -1869,11 +1867,11 @@
             gsap.to(wrapBall1, 0.6, {
                 height: 0,
                 ease: "linear ",
-                delay: 1.3 * d
+                delay: 1.3 * d,
             });
             gsap.to(wrapBall2, 0.4, {
                 borderRadius: 0,
-                ease: "linear"
+                ease: "linear",
             });
             gsap.to(wrapBall2, 0.6, {
                 height: 30,
@@ -1883,11 +1881,11 @@
             gsap.to(wrapBall2, 0.6, {
                 height: 0,
                 ease: "linear ",
-                delay: 1.3 * d
+                delay: 1.3 * d,
             });
             gsap.to(wrapBall3, 0.4, {
                 borderRadius: 0,
-                ease: "linear"
+                ease: "linear",
             });
             gsap.to(wrapBall3, 0.6, {
                 height: 30,
@@ -1897,7 +1895,7 @@
             gsap.to(wrapBall3, 0.6, {
                 height: 0,
                 ease: "linear ",
-                delay: 1.3 * d
+                delay: 1.3 * d,
             });
         }
 
@@ -2172,7 +2170,7 @@
 
         function handleAnimation() {
             let tl = gsap.timeline({
-                delay: 2
+                delay: 2,
             });
             let boxShadow = "rgba(0, 0, 0, 0.1) 0px 4px 12px";
             let boxShadow0 = "rgba(0, 0, 0, 0.1) 0px 0px 0px";

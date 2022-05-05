@@ -308,6 +308,15 @@ body {
     overflow: hidden;
 }
 
+@media only screen and (max-width: 768px) {
+    .axis {
+        display: none;
+    }
+    .container .row div:first-child {
+        text-align: center;
+    }
+}
+
 
 /* Animation Firefly */
 
