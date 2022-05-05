@@ -369,7 +369,7 @@
                             <div class="how-step text-center">
                                 <div class="division"></div>
                                 <!-- thêm 1 thẻ có class division Nhuong -->
-                                <div class="division"></div> 
+                                <div class="division"></div>
                             </div>
                         </div>
                     </div>
@@ -464,7 +464,21 @@
                 </div>
             </div>
             <div class="section-best-service">
-                <div class="bg-img hide-mb"></div>
+                <div class="bg-img hide-mb">
+                    <div class="bg-light"></div>
+                    <div class="bg-bubbles">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
                 <div class="bg-content">
                     <div class="container">
                         <div class="row">
@@ -1995,8 +2009,7 @@
             }
         }
 
-        
-//  how we do nhuong
+        //  how we do nhuong
         let time = 1;
         let steps = document.querySelectorAll(
             ".pt-4 .col-md-3.text-center.item-team"
@@ -2051,7 +2064,6 @@
             left: 0 + stepLeft,
             opacity: 0,
             ease: "linear",
-            
         });
 
         gsap.to(cardAfter[0], {
@@ -2228,6 +2240,72 @@
                 scale: 1,
                 duration: 0.6,
             });
+        }
+        // Js Animation Background
+        // 1. Light
+        const FIREFLIES = 100;
+        const maxHeight = 600;
+        const maxWidth = 1200;
+
+        const random = (min, max) => {
+            return Math.floor(Math.random() * (max - min) + min);
+        };
+        for (var i = 0; i < FIREFLIES; i++) {
+            let div = document.createElement("div");
+            div.setAttribute("class", "firefly");
+            document.getElementsByClassName("bg-light")[0].appendChild(div);
+        }
+        var fireflies = document.querySelectorAll(".firefly");
+        for (var i = 0; i < FIREFLIES; i++) {
+            let ix = random(0, maxWidth);
+            let fx = random(0, maxWidth);
+
+            let iy = random(0, maxHeight);
+            let fy = random(0, maxHeight);
+            fireflies[i].style.animationDuration =
+                Math.floor(Math.random() * 30) + "s";
+            gsap.fromTo(
+                fireflies[i], {
+                    x: ix,
+                    y: iy,
+                }, {
+                    x: fx,
+                    y: fy,
+                    duration: random(30, 50),
+                    ease: "rough ({template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp:false})",
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+            gsap.fromTo(
+                fireflies[i], {
+                    boxShadow: "0 0 0 0px rgba(255, 255, 255, 0)",
+                }, {
+                    boxShadow: "0 0 0 .75px rgba(255, 255, 255, 0.7)",
+                    duration: random(40, 60),
+                    ease: "slow (0.7, 0.7, false)",
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+            gsap.fromTo(
+                fireflies[i], {
+                    opacity: 0,
+                }, {
+                    duration: random(1, 5),
+                    opacity: 0.9,
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+        }
+        // 2. Bubble
+        var arrBubbles = document.querySelectorAll(".bg-bubbles span");
+        for (var i = 0; i < arrBubbles.length; i++) {
+            var numX = Math.floor(Math.random() * (1200 - -1000 + -1000));
+            var numY = Math.floor(Math.random() * (1200 - -1000 + -1000));
+            arrBubbles[i].style.transformOrigin = numX;
+            arrBubbles[i].style.transformOrigin = numY;
         }
     </script>
 </body>
