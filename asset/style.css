@@ -698,13 +698,14 @@ span:hover {
         font-size: 24px;
     }
 }
-
+/* nhuong change */
 hr.solid {
     border-top: 2px solid #0855F8;
     width: 80px;
-    margin-top: 15px;
+    margin-top: -14px;
     margin-bottom: 15px;
 }
+/* nhuong end */
 
 .head-description {
     font-size: 16px;
@@ -2612,9 +2613,31 @@ article .card-service:hover .actions {
     /* transform: scale(0.8); */
     margin: 0.5em 0;
 }
-.carousel-inner .carousel-item .service:hover {
-    transform: scale(1.05);
-    z-index: 10;
+:root {
+    --borderWidth : 1px
+}
+.carousel-inner .carousel-item .service:hover{
+    border: 3px solid #007bff;
+    animation: animationColor linear 1s infinite;
+    border-radius: 4px;
+}
+@keyframes animationColor {
+    0%{
+        border-color: #007bff;
+    }
+    
+     25%{
+        border-color: #e36c17;
+    }
+     50%{
+        border-color: #cde30e;
+    }
+     75%{
+        border-color: #e062cb;
+    }
+     100%{
+        border-color: #007bff;
+    }
 }
 .carousel-inner{
     transition:  ease-in-out 0.6s ;
