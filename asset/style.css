@@ -30,6 +30,7 @@ body {
     0% {
         -webkit-transform: translateX(900px);
     }
+
     100% {
         -webkit-transform: translateX(0px);
     }
@@ -44,6 +45,7 @@ body {
     0% {
         -webkit-transform: translateX(-900px);
     }
+
     100% {
         -webkit-transform: translateX(0px);
     }
@@ -133,6 +135,7 @@ body {
         line-height: 17.38px;
         padding: 0 28px;
     }
+
     .select-wrap .select-content p {
         font-size: 14px;
         line-height: 17.38px;
@@ -350,6 +353,7 @@ a.btn:hover::after {
     .wrap-btn a.btn {
         line-height: 1.7em;
     }
+
     a.btn:hover::after {
         left: 120px;
     }
@@ -551,18 +555,22 @@ a.btn:hover::after {
     .site-header .wrap-header .side-bar {
         padding: 0;
     }
+
     .site-header .wrap-header .navbar {
         padding: 0;
     }
+
     .site-header .wrap-header .navbar .navbar-menu {
         position: absolute;
         right: 15px;
         top: 15px;
     }
+
     .site-header .wrap-header .navbar .navbar-toggler {
         border: none;
         outline: none;
     }
+
     .site-header .wrap-header .navbar .navbar-nav {
         position: absolute;
         top: 40px;
@@ -803,6 +811,7 @@ hr.solid {
     .section-banner .wrap-banner-content .text-content {
         max-width: 300px;
     }
+
     .wrap-banner-content .text-content h1 {
         height: 30px
     }
@@ -1174,12 +1183,15 @@ background-color: red;
     0% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     75% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -1310,9 +1322,11 @@ background-color: red;
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.5);
     }
+
     100% {
         transform: scale(1);
     }
@@ -2090,6 +2104,7 @@ article .wrap-btn-blue a.btn {
     article .wrap-btn-blue a.btn {
         padding: 8px 35px 8px 35px;
     }
+
     article .wrap-btn-blue a.btn .icon {
         right: -27px;
     }
@@ -2232,6 +2247,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .custom-pagination .wrap-btn-blue .next,
     .custom-pagination .wrap-btn-blue .prev {
         padding: 8px 35px 8px 30px;
@@ -2244,6 +2260,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .custom-pagination .wrap-btn-blue .next .icon,
     .custom-pagination .wrap-btn-blue .prev .icon {
         right: -18px;
@@ -2261,6 +2278,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .carousel .carousel-control-next,
     .carousel .carousel-control-prev {
         top: 29%;
@@ -2317,6 +2335,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .carousel .carousel-control-prev-icon,
     .carousel .carousel-control-next-icon {
         background: #0855F8 url("assets/images/icons/arrow-right-mb.png") no-repeat center;
@@ -2367,6 +2386,7 @@ article .card-service:hover .actions {
         width: 24px;
         height: 24px;
     }
+
     #mainCarousel .carousel__nav .carousel__button svg {
         width: var(--carousel-button-svg-width-mb, 50%);
         height: var(--carousel-button-svg-height-mb, 50%);
@@ -2413,9 +2433,11 @@ article .card-service:hover .actions {
     0% {
         with: 0em
     }
+
     5% {
         width: 0em;
     }
+
     100% {
         width: 7em;
     }
@@ -2581,6 +2603,26 @@ article .card-service:hover .actions {
 
 
 /* animation how we do nhuong end */
+/* 3d change hover */
+#tilt {}
+
+.carousel-inner .carousel-item .service {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform: scale(0.8);
+}
+.carousel-inner{
+    transition:  ease-in-out 0.6s ;
+    transform: rotate(2deg);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px; 
+    padding: 20px 0;
+
+
+
+}
+.carousel-inner:hover{
+    transform: scale(1.05);
+}
 
 .block1 {
     background-color: red;
@@ -2724,6 +2766,7 @@ article .card-service:hover .actions {
 }
 
 @keyframes animated {
+
     /* Animation Bubble */
     /* 0% {
         opacity: 0;
@@ -2761,9 +2804,11 @@ article .card-service:hover .actions {
         -ms-transform: scale(1.5) translateY(0);
         -o-transform: scale(1.5) translateY(0);
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
