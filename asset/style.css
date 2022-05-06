@@ -1456,21 +1456,23 @@ background-color: red;
 }
 
 .matrix .matrix-item .card-detail .card-title {
-    color: #fff;
+    text-transform: capitalize;
 }
 
-.matrix .matrix-item>div {
-    position: absolute;
-    bottom: 2rem;
+.matrix .matrix-item .card-detail .card-title,
+.matrix .matrix-item .card-detail .card-subtitle {
+    color: #fff;
+    position: relative;
+}
+
+.matrix .matrix-item .card-detail {
+    position: relative;
+    bottom: 7rem;
     left: -3.75rem;
     width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.matrix .matrix-item:hover {
-    background-color: rgb(255, 81, 0);
 }
 
 .matrix .matrix-item:hover img {
@@ -1481,10 +1483,11 @@ background-color: red;
     padding: 10px;
     position: absolute;
     background-color: #fff;
-    left: -50%;
-    top: -50%;
+    left: 0.35rem;
+    bottom: 8rem;
     border-radius: 10%;
     /* border-radius: 50%; */
+    z-index: 999;
 }
 
 .matrix .matrix-item:hover .card-detail .card-subtitle,
@@ -1520,6 +1523,99 @@ background-color: red;
     }
     100% {
         transform: scale(1);
+    }
+}
+
+.circle-3d {
+    position: relative;
+    top: 60%;
+}
+
+.content-button {
+    position: absolute;
+    top: 38%;
+    left: 7.1rem;
+    font-size: 0.7em;
+    color: #000;
+    background: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.circle-3d:hover .content-button {
+    opacity: 1;
+}
+
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.leo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.blue-orbit {
+    width: 165px;
+    height: 165px;
+    border: 1px solid #91daffa5;
+    -webkit-animation: spin3D 3s linear .2s infinite;
+}
+
+.green-orbit {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #91ffbfa5;
+    -webkit-animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #ffca91a5;
+    -webkit-animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
+    -webkit-animation: spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+    transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+    transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.w3 {
+    transform: rotate3D(.5, 1, 2, 90deg);
+}
+
+@keyframes spin3D {
+    from {
+        transform: rotate3d(.5, .5, .5, 360deg);
+    }
+    to {
+        transform: rotate3d(0deg);
     }
 }
 
