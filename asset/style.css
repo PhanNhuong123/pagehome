@@ -2631,6 +2631,13 @@ article .card-service:hover .actions {
 
 }
 
+.head-title span {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+}
+.head-title{
+    min-height: 18vh;
+}
+/* custom scrollbar nhuong */
 ::-webkit-scrollbar{
   
     width: auto

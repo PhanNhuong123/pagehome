@@ -2601,568 +2601,592 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <!-- <script src="./asset/anime.min.js"></script> -->
     <script type="text/javascript">
-      (function () {
-        var expirationDate = new Date();
-        expirationDate.setTime(expirationDate.getTime() + 31536000 * 1000);
-        document.cookie =
-          "pll_language=ja; expires=" +
-          expirationDate.toUTCString() +
-          "; path=/; secure; SameSite=Lax";
-      })();
+       (function () {
+         var expirationDate = new Date();
+         expirationDate.setTime(expirationDate.getTime() + 31536000 * 1000);
+         document.cookie =
+           "pll_language=ja; expires=" +
+           expirationDate.toUTCString() +
+           "; path=/; secure; SameSite=Lax";
+       })();
 
-      //animationLoading
-      const rl = gsap.timeline();
-      const wrapBalls = document.getElementsByClassName("ball");
-      const wrapBall1 = wrapBalls[0];
-      const wrapBall2 = wrapBalls[1];
-      const wrapBall3 = wrapBalls[2];
-      // animation img
-      const img = document.querySelector(".banner-image img");
-      console.log(img);
-      gsap.from(img, {
-        rotate: -1080,
-        duration: 6,
-        ease: "back.out(1.4)",
-        y: -1000,
-        x: 1200,
-      });
-      var width = $(window).width();
-      var height = $(window).height();
-      var mobile = width <= 1023;
-      let d = 0.5;
-      let t = 0.5;
-      let y1, y2, y3, x1, x2, x3;
-      if (!mobile) {
-        y1 = 258;
-        y2 = 272;
-        y3 = 288;
-        x1 = -56;
-        x2 = -106;
-        x3 = -24;
-      } else {
-        y1 = 164 - 40;
-        y2 = 180 - 40;
-        y3 = 196 - 40;
-        x1 = -56 + 20;
-        x2 = -106 + 20;
-        x3 = -24 + 20;
-      }
-      //ball 1
-      gsap.fromTo(
-        wrapBall1,
-        {
-          rotate: -490,
-        },
-        {
-          rotate: 0,
-          duration: 3 * t,
-          ease: "linear",
-          onComplete: handleLoading,
-        }
-      );
-      console.log(y1, mobile);
-      gsap.to(wrapBall1, {
-        y: y1,
-        x: x1,
-        duration: 1.3 * t,
-        delay: 2.99 * d,
-        ease: "linear",
-        onComplete: handleStick,
-      });
-      //ball 2
-      gsap.fromTo(
-        wrapBall2,
-        {
-          rotate: -220,
-        },
-        {
-          rotate: 180,
-          duration: 3 * t,
-          ease: "linear",
-        }
-      );
-      gsap.to(wrapBall2, {
-        x: x2,
-        y: y2,
-        duration: 0.9 * t,
-        delay: 2.99 * d,
-        ease: "linear",
-      });
+       //animationLoading
+       const rl = gsap.timeline();
+       const wrapBalls = document.getElementsByClassName("ball");
+       const wrapBall1 = wrapBalls[0];
+       const wrapBall2 = wrapBalls[1];
+       const wrapBall3 = wrapBalls[2];
+       // animation img
+       const img = document.querySelector(".banner-image img");
+       console.log(img);
+       gsap.from(img, {
+         rotate: -1080,
+         duration: 6,
+         ease: "back.out(1.4)",
+         y: -1000,
+         x: 1200,
+       });
+       var width = $(window).width();
+       var height = $(window).height();
+       var mobile = width <= 1023;
+       let d = 0.5;
+       let t = 0.5;
+       let y1, y2, y3, x1, x2, x3;
+       if (!mobile) {
+         y1 = 258;
+         y2 = 272;
+         y3 = 288;
+         x1 = -56;
+         x2 = -106;
+         x3 = -24;
+       } else {
+         y1 = 164 - 40;
+         y2 = 180 - 40;
+         y3 = 196 - 40;
+         x1 = -56 + 20;
+         x2 = -106 + 20;
+         x3 = -24 + 20;
+       }
+       //ball 1
+       gsap.fromTo(
+         wrapBall1,
+         {
+           rotate: -490,
+         },
+         {
+           rotate: 0,
+           duration: 3 * t,
+           ease: "linear",
+           onComplete: handleLoading,
+         }
+       );
+       console.log(y1, mobile);
+       gsap.to(wrapBall1, {
+         y: y1,
+         x: x1,
+         duration: 1.3 * t,
+         delay: 2.99 * d,
+         ease: "linear",
+         onComplete: handleStick,
+       });
+       //ball 2
+       gsap.fromTo(
+         wrapBall2,
+         {
+           rotate: -220,
+         },
+         {
+           rotate: 180,
+           duration: 3 * t,
+           ease: "linear",
+         }
+       );
+       gsap.to(wrapBall2, {
+         x: x2,
+         y: y2,
+         duration: 0.9 * t,
+         delay: 2.99 * d,
+         ease: "linear",
+       });
 
-      //ball 3
-      gsap.fromTo(
-        wrapBall3,
-        {
-          rotate: 50,
-        },
-        {
-          rotate: 360,
-          duration: 3 * t,
-          ease: "linear",
-        }
-      );
-      gsap.to(wrapBall3, {
-        y: y3,
-        x: x3,
-        duration: 0.62 * t,
-        delay: 2.99 * d,
-        ease: "linear",
-      });
+       //ball 3
+       gsap.fromTo(
+         wrapBall3,
+         {
+           rotate: 50,
+         },
+         {
+           rotate: 360,
+           duration: 3 * t,
+           ease: "linear",
+         }
+       );
+       gsap.to(wrapBall3, {
+         y: y3,
+         x: x3,
+         duration: 0.62 * t,
+         delay: 2.99 * d,
+         ease: "linear",
+       });
 
-      function handleLoading() {
-        gsap.to(wrapBall1, 0.4, {
-          borderRadius: 0,
-          ease: "linear ",
-        });
-        gsap.to(wrapBall1, 0.6, {
-          height: 30,
-          ease: "linear ",
-          delay: 0.2 * d,
-        });
-        gsap.to(wrapBall1, 0.6, {
-          height: 0,
-          ease: "linear ",
-          delay: 1.3 * d,
-        });
-        gsap.to(wrapBall2, 0.4, {
-          borderRadius: 0,
-          ease: "linear",
-        });
-        gsap.to(wrapBall2, 0.6, {
-          height: 30,
-          ease: "linear ",
-          delay: 0.2 * d,
-        });
-        gsap.to(wrapBall2, 0.6, {
-          height: 0,
-          ease: "linear ",
-          delay: 1.3 * d,
-        });
-        gsap.to(wrapBall3, 0.4, {
-          borderRadius: 0,
-          ease: "linear",
-        });
-        gsap.to(wrapBall3, 0.6, {
-          height: 30,
-          ease: "linear ",
-          delay: 0.2 * d,
-        });
-        gsap.to(wrapBall3, 0.6, {
-          height: 0,
-          ease: "linear ",
-          delay: 1.3 * d,
-        });
-      }
+       function handleLoading() {
+         gsap.to(wrapBall1, 0.4, {
+           borderRadius: 0,
+           ease: "linear ",
+         });
+         gsap.to(wrapBall1, 0.6, {
+           height: 30,
+           ease: "linear ",
+           delay: 0.2 * d,
+         });
+         gsap.to(wrapBall1, 0.6, {
+           height: 0,
+           ease: "linear ",
+           delay: 1.3 * d,
+         });
+         gsap.to(wrapBall2, 0.4, {
+           borderRadius: 0,
+           ease: "linear",
+         });
+         gsap.to(wrapBall2, 0.6, {
+           height: 30,
+           ease: "linear ",
+           delay: 0.2 * d,
+         });
+         gsap.to(wrapBall2, 0.6, {
+           height: 0,
+           ease: "linear ",
+           delay: 1.3 * d,
+         });
+         gsap.to(wrapBall3, 0.4, {
+           borderRadius: 0,
+           ease: "linear",
+         });
+         gsap.to(wrapBall3, 0.6, {
+           height: 30,
+           ease: "linear ",
+           delay: 0.2 * d,
+         });
+         gsap.to(wrapBall3, 0.6, {
+           height: 0,
+           ease: "linear ",
+           delay: 1.3 * d,
+         });
+       }
 
-      function handleStick() {
-        let stick = document.getElementsByClassName("animation_stick")[0];
-        console.log(stick.style);
-        stick.style.display = "block";
-        let left = 14;
-        let right = 85;
-        let stickLeft = setInterval(handleStickLeft, 0.0001);
-        let stickRight = setInterval(handleStickRight, 0.0001);
+       function handleStick() {
+         let stick = document.getElementsByClassName("animation_stick")[0];
+         console.log(stick.style);
+         stick.style.display = "block";
+         let left = 14;
+         let right = 85;
+         let stickLeft = setInterval(handleStickLeft, 0.0001);
+         let stickRight = setInterval(handleStickRight, 0.0001);
 
-        function handleStickLeft() {
-          if (left <= 0) {
-            left = true;
-            clearInterval(stickLeft);
-            rotateStick();
-          } else {
-            left = left - 0.1;
-            stick.style.left = left + "%";
-          }
-        }
+         function handleStickLeft() {
+           if (left <= 0) {
+             left = true;
+             clearInterval(stickLeft);
+             rotateStick();
+           } else {
+             left = left - 0.1;
+             stick.style.left = left + "%";
+           }
+         }
 
-        function handleStickRight() {
-          if (right <= 70) {
-            right = true;
-            clearInterval(stickRight);
-            rotateStick();
-          } else {
-            right = right - 0.1;
-            stick.style.right = right + "%";
-          }
-        }
+         function handleStickRight() {
+           if (right <= 70) {
+             right = true;
+             clearInterval(stickRight);
+             rotateStick();
+           } else {
+             right = right - 0.1;
+             stick.style.right = right + "%";
+           }
+         }
 
-        function rotateStick() {
-          if (left === true && right === true) {
-            console.log(left, right);
-            stick.style.transformOrigin = "0 0";
-            gsap.to(stick, {
-              rotate: -90,
-              ease: "bounce.out",
-              duration: 1,
-              onComplete: animationWrite,
-            });
-          }
-        }
+         function rotateStick() {
+           if (left === true && right === true) {
+             console.log(left, right);
+             stick.style.transformOrigin = "0 0";
+             gsap.to(stick, {
+               rotate: -90,
+               ease: "bounce.out",
+               duration: 1,
+               onComplete: animationWrite,
+             });
+           }
+         }
 
-        function animationWrite() {
-          let typed1 = new Typed(".text-content h1:nth-child(1)", {
-            strings: [
-              "働き方は自由 !!! ^40\n `<br/>`GOTECH `&nbsp;``<span class='height-light-text'>`GLOBAL TEAM`</span>` ^40\n `<br/>`FAST `&` FLEXIBLE",
-            ],
-            typeSpeed: 30,
-            loop: false,
-            showCursor: false,
-          });
+         function animationWrite() {
+           let typed1 = new Typed(".text-content h1:nth-child(1)", {
+             strings: [
+               "働き方は自由 !!! ^40\n `<br/>`GOTECH `&nbsp;``<span class='height-light-text'>`GLOBAL TEAM`</span>` ^40\n `<br/>`FAST `&` FLEXIBLE",
+             ],
+             typeSpeed: 30,
+             loop: false,
+             showCursor: false,
+           });
 
-          setTimeout(() => {
-            let typed4 = new Typed(".text-content h4", {
-              strings: [
-                "",
-                "We connect all developers in the world to build global team.",
-              ],
-              typeSpeed: 30,
-              showCursor: false,
-              loop: false,
-            });
-            document.querySelector(".text-content h4").style.opacity = 1;
-          }, 2100);
-          gsap.to(stick, {
-            opacity: 0,
-            rotate: -130,
-            duration: 0.3,
-            delay: 7.5,
-          });
-        }
-      }
+           setTimeout(() => {
+             let typed4 = new Typed(".text-content h4", {
+               strings: [
+                 "",
+                 "We connect all developers in the world to build global team.",
+               ],
+               typeSpeed: 30,
+               showCursor: false,
+               loop: false,
+             });
+             document.querySelector(".text-content h4").style.opacity = 1;
+           }, 2100);
+           gsap.to(stick, {
+             opacity: 0,
+             rotate: -130,
+             duration: 0.3,
+             delay: 7.5,
+           });
+         }
+       }
 
-      //  how we do nhuong
-      let time = 1;
-      let steps = document.querySelectorAll(
-        ".pt-4 .col-md-3.text-center.item-team"
-      );
-      let stepCards = document.querySelectorAll(
-        ".pt-4 .col-md-3.text-center.item-team .card"
-      );
-      let cardAfter = document.querySelectorAll(
-        ".pt-4 .col-md-3.text-center.item-team .after"
-      );
-      console.log(cardAfter);
-      let stepNums = document.querySelectorAll(".how-step-custom .col-md-3");
-      let stepNumImgs = document.querySelectorAll(
-        ".how-step-custom .col-md-3 .wrap-image"
-      );
-      console.log(stepNums);
-      let stepLeft = -800;
-      let stepRight = 500;
-      let stickStep = document.querySelector(
-        ".section-how .item-team .how-step .division"
-      );
+       //  how we do nhuong
+       let time = 1;
+       let steps = document.querySelectorAll(
+         ".pt-4 .col-md-3.text-center.item-team"
+       );
+       let stepCards = document.querySelectorAll(
+         ".pt-4 .col-md-3.text-center.item-team .card"
+       );
+       let cardAfter = document.querySelectorAll(
+         ".pt-4 .col-md-3.text-center.item-team .after"
+       );
+       console.log(cardAfter);
+       let stepNums = document.querySelectorAll(".how-step-custom .col-md-3");
+       let stepNumImgs = document.querySelectorAll(
+         ".how-step-custom .col-md-3 .wrap-image"
+       );
+       console.log(stepNums);
+       let stepLeft = -800;
+       let stepRight = 500;
+       let stickStep = document.querySelector(
+         ".section-how .item-team .how-step .division"
+       );
 
-      stickStep.style.transformOrigin = "0 0";
+       stickStep.style.transformOrigin = "0 0";
 
-      gsap.from(stickStep, {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        width: 0,
+       gsap.from(stickStep, {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         width: 0,
 
-        duration: 6,
-        ease: "linear",
-        delay: 1,
-      });
+         duration: 6,
+         ease: "linear",
+         delay: 1,
+       });
 
-      // 1
-      gsap.from(steps[0], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        left: 0 + stepLeft,
-        duration: time,
-        ease: "power1.out",
-      });
-      gsap.from(stepNums[0], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        left: 0 + stepLeft,
-        opacity: 0,
-        ease: "linear",
-      });
+       // 1
+       gsap.from(steps[0], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         left: 0 + stepLeft,
+         duration: time,
+         ease: "power1.out",
+       });
+       gsap.from(stepNums[0], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         left: 0 + stepLeft,
+         opacity: 0,
+         ease: "linear",
+       });
 
-      gsap.to(cardAfter[0], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        y: 300,
-        duration: 1,
-        ease: "linear",
-        delay: 1,
-        onComplete: () => {
-          stepNumImgs[0].style.filter = "hue-rotate(210deg)";
-          cardAfter[0].style.display = "none";
-        },
-      });
-      // 2
+       gsap.to(cardAfter[0], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         y: 300,
+         duration: 1,
+         ease: "linear",
+         delay: 1,
+         onComplete: () => {
+           stepNumImgs[0].style.filter = "hue-rotate(210deg)";
+           cardAfter[0].style.display = "none";
+         },
+       });
+       // 2
 
-      gsap.from(steps[1], {
-        scrollTrigger: {
-          trigger: steps[1],
-          start: "top center",
-        },
-        left: -270 + stepLeft,
-        duration: time,
-        ease: "power1.out",
-      });
-      gsap.from(stepNums[1], {
-        scrollTrigger: {
-          trigger: steps[1],
-          start: "top center",
-        },
-        left: -270 + stepLeft,
-        duration: 2,
-        ease: "linear",
-        opacity: 0,
-      });
+       gsap.from(steps[1], {
+         scrollTrigger: {
+           trigger: steps[1],
+           start: "top center",
+         },
+         left: -270 + stepLeft,
+         duration: time,
+         ease: "power1.out",
+       });
+       gsap.from(stepNums[1], {
+         scrollTrigger: {
+           trigger: steps[1],
+           start: "top center",
+         },
+         left: -270 + stepLeft,
+         duration: 2,
+         ease: "linear",
+         opacity: 0,
+       });
 
-      gsap.to(cardAfter[1], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        ease: "linear",
-        y: 300,
-        delay: 2.7,
-        duration: 1,
-        onComplete: () => {
-          stepNumImgs[1].style.filter = "hue-rotate(210deg)";
-          cardAfter[1].style.display = "none";
-        },
-      });
-      //3
-      gsap.from(steps[2], {
-        scrollTrigger: {
-          trigger: steps[2],
-          start: "top center",
-        },
-        left: -510 + stepLeft,
-        duration: time,
-        ease: "power1.out",
-      });
-      gsap.from(stepNums[2], {
-        scrollTrigger: {
-          trigger: steps[2],
-          start: "top center",
-        },
-        left: -510 + stepLeft,
-        duration: 4,
-        ease: "linear",
-        // onComplete: () => {
-        //     console.log("cai 33333333");
-        // },
-      });
+       gsap.to(cardAfter[1], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         ease: "linear",
+         y: 300,
+         delay: 2.7,
+         duration: 1,
+         onComplete: () => {
+           stepNumImgs[1].style.filter = "hue-rotate(210deg)";
+           cardAfter[1].style.display = "none";
+         },
+       });
+       //3
+       gsap.from(steps[2], {
+         scrollTrigger: {
+           trigger: steps[2],
+           start: "top center",
+         },
+         left: -510 + stepLeft,
+         duration: time,
+         ease: "power1.out",
+       });
+       gsap.from(stepNums[2], {
+         scrollTrigger: {
+           trigger: steps[2],
+           start: "top center",
+         },
+         left: -510 + stepLeft,
+         duration: 4,
+         ease: "linear",
+         // onComplete: () => {
+         //     console.log("cai 33333333");
+         // },
+       });
 
-      gsap.to(cardAfter[2], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        y: 300,
-        ease: "linear",
-        duration: 1,
-        delay: 4.7,
-        onComplete: () => {
-          stepNumImgs[2].style.filter = "hue-rotate(210deg)";
-          cardAfter[2].style.display = "none";
-        },
-      });
+       gsap.to(cardAfter[2], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         y: 300,
+         ease: "linear",
+         duration: 1,
+         delay: 4.7,
+         onComplete: () => {
+           stepNumImgs[2].style.filter = "hue-rotate(210deg)";
+           cardAfter[2].style.display = "none";
+         },
+       });
 
-      //4
-      gsap.from(steps[3], {
-        scrollTrigger: {
-          trigger: steps[3],
-          start: "top center",
-        },
-        left: -750 + stepLeft,
-        duration: time,
-        ease: "power1.out",
-      });
-      gsap.from(stepNums[3], {
-        scrollTrigger: {
-          trigger: steps[3],
-          start: "top center",
-        },
-        left: -750 + stepLeft,
-        duration: 6,
-        ease: "linear",
-        onComplete: handleAnimation,
-        opacity: 0,
-      });
-      gsap.to(cardAfter[3], {
-        scrollTrigger: {
-          trigger: steps[0],
-          start: "top center",
-        },
-        y: 300,
-        ease: "linear",
-        duration: 1,
-        delay: 6.8,
-        onComplete: () => {
-          stepNumImgs[3].style.filter = "hue-rotate(210deg)";
-          cardAfter[3].style.display = "none";
-        },
-      });
+       //4
+       gsap.from(steps[3], {
+         scrollTrigger: {
+           trigger: steps[3],
+           start: "top center",
+         },
+         left: -750 + stepLeft,
+         duration: time,
+         ease: "power1.out",
+       });
+       gsap.from(stepNums[3], {
+         scrollTrigger: {
+           trigger: steps[3],
+           start: "top center",
+         },
+         left: -750 + stepLeft,
+         duration: 6,
+         ease: "linear",
+         onComplete: handleAnimation,
+         opacity: 0,
+       });
+       gsap.to(cardAfter[3], {
+         scrollTrigger: {
+           trigger: steps[0],
+           start: "top center",
+         },
+         y: 300,
+         ease: "linear",
+         duration: 1,
+         delay: 6.8,
+         onComplete: () => {
+           stepNumImgs[3].style.filter = "hue-rotate(210deg)";
+           cardAfter[3].style.display = "none";
+         },
+       });
 
-      function handleAnimation() {
-        let tl = gsap.timeline({
-          delay: 2,
-        });
-        let boxShadow = "rgba(0, 0, 0, 0.1) 0px 4px 12px";
-        let boxShadow0 = "rgba(0, 0, 0, 0.1) 0px 0px 0px";
+       function handleAnimation() {
+         let tl = gsap.timeline({
+           delay: 2,
+         });
+         let boxShadow = "rgba(0, 0, 0, 0.1) 0px 4px 12px";
+         let boxShadow0 = "rgba(0, 0, 0, 0.1) 0px 0px 0px";
 
-        tl.to(stepCards[0], {
-          boxShadow: boxShadow,
-          duration: 0.6,
-          scale: 1.05,
-        });
-        tl.to(stepCards[0], {
-          boxShadow: boxShadow0,
-          duration: 0.6,
-          scale: 1,
-        });
+         tl.to(stepCards[0], {
+           boxShadow: boxShadow,
+           duration: 0.6,
+           scale: 1.05,
+         });
+         tl.to(stepCards[0], {
+           boxShadow: boxShadow0,
+           duration: 0.6,
+           scale: 1,
+         });
 
-        tl.to(stepCards[1], {
-          boxShadow: boxShadow,
-          duration: 0.6,
-          scale: 1.05,
-        });
-        tl.to(stepCards[1], {
-          boxShadow: boxShadow0,
-          duration: 0.6,
-          scale: 1,
-        });
+         tl.to(stepCards[1], {
+           boxShadow: boxShadow,
+           duration: 0.6,
+           scale: 1.05,
+         });
+         tl.to(stepCards[1], {
+           boxShadow: boxShadow0,
+           duration: 0.6,
+           scale: 1,
+         });
 
-        tl.to(stepCards[2], {
-          boxShadow: boxShadow,
-          scale: 1.05,
-          duration: 0.6,
-        });
-        tl.to(stepCards[2], {
-          boxShadow: boxShadow0,
-          scale: 1,
-          duration: 0.6,
-        });
+         tl.to(stepCards[2], {
+           boxShadow: boxShadow,
+           scale: 1.05,
+           duration: 0.6,
+         });
+         tl.to(stepCards[2], {
+           boxShadow: boxShadow0,
+           scale: 1,
+           duration: 0.6,
+         });
 
-        tl.to(stepCards[3], {
-          boxShadow: boxShadow,
-          scale: 1.05,
-          duration: 0.6,
-        });
-        tl.to(stepCards[3], {
-          boxShadow: boxShadow0,
-          scale: 1,
-          duration: 0.6,
-        });
-      }
-      // Js Animation Background
-      // 1. Light
-      const FIREFLIES = 100;
-      const maxHeight = 600;
-      const maxWidth = 1200;
+         tl.to(stepCards[3], {
+           boxShadow: boxShadow,
+           scale: 1.05,
+           duration: 0.6,
+         });
+         tl.to(stepCards[3], {
+           boxShadow: boxShadow0,
+           scale: 1,
+           duration: 0.6,
+         });
+       }
+       // Js Animation Background
+       // 1. Light
+       const FIREFLIES = 100;
+       const maxHeight = 600;
+       const maxWidth = 1200;
 
-      const random = (min, max) => {
-        return Math.floor(Math.random() * (max - min) + min);
-      };
-      for (var i = 0; i < FIREFLIES; i++) {
-        let div = document.createElement("div");
-        div.setAttribute("class", "firefly");
-        document.getElementsByClassName("bg-light")[0].appendChild(div);
-      }
-      var fireflies = document.querySelectorAll(".firefly");
-      for (var i = 0; i < FIREFLIES; i++) {
-        let ix = random(0, maxWidth);
-        let fx = random(0, maxWidth);
+       const random = (min, max) => {
+         return Math.floor(Math.random() * (max - min) + min);
+       };
+       for (var i = 0; i < FIREFLIES; i++) {
+         let div = document.createElement("div");
+         div.setAttribute("class", "firefly");
+         document.getElementsByClassName("bg-light")[0].appendChild(div);
+       }
+       var fireflies = document.querySelectorAll(".firefly");
+       for (var i = 0; i < FIREFLIES; i++) {
+         let ix = random(0, maxWidth);
+         let fx = random(0, maxWidth);
 
-        let iy = random(0, maxHeight);
-        let fy = random(0, maxHeight);
-        fireflies[i].style.animationDuration =
-          Math.floor(Math.random() * 30) + "s";
-        gsap.fromTo(
-          fireflies[i],
-          {
-            x: ix,
-            y: iy,
-          },
-          {
-            x: fx,
-            y: fy,
-            duration: random(30, 50),
-            ease: "rough ({template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp:false})",
-            repeat: -1,
-            yoyo: true,
-          }
-        );
-        gsap.fromTo(
-          fireflies[i],
-          {
-            boxShadow: "0 0 0 0px rgba(255, 255, 255, 0)",
-          },
-          {
-            boxShadow: "0 0 0 .75px rgba(255, 255, 255, 0.7)",
-            duration: random(40, 60),
-            ease: "slow (0.7, 0.7, false)",
-            repeat: -1,
-            yoyo: true,
-          }
-        );
-        gsap.fromTo(
-          fireflies[i],
-          {
-            opacity: 0,
-          },
-          {
-            duration: random(1, 5),
-            opacity: 0.9,
-            repeat: -1,
-            yoyo: true,
-          }
-        );
-      }
-      // 2. Bubble
-      var arrBubbles = document.querySelectorAll(".bg-bubbles span");
-      for (var i = 0; i < arrBubbles.length; i++) {
-        var numX = Math.floor(Math.random() * (1200 - -1000 + -1000));
-        var numY = Math.floor(Math.random() * (1200 - -1000 + -1000));
-        arrBubbles[i].style.transformOrigin = numX;
-        arrBubbles[i].style.transformOrigin = numY;
-      }
+         let iy = random(0, maxHeight);
+         let fy = random(0, maxHeight);
+         fireflies[i].style.animationDuration =
+           Math.floor(Math.random() * 30) + "s";
+         gsap.fromTo(
+           fireflies[i],
+           {
+             x: ix,
+             y: iy,
+           },
+           {
+             x: fx,
+             y: fy,
+             duration: random(30, 50),
+             ease: "rough ({template: none.out, strength: 1, points: 20, taper: 'none', randomize: true, clamp:false})",
+             repeat: -1,
+             yoyo: true,
+           }
+         );
+         gsap.fromTo(
+           fireflies[i],
+           {
+             boxShadow: "0 0 0 0px rgba(255, 255, 255, 0)",
+           },
+           {
+             boxShadow: "0 0 0 .75px rgba(255, 255, 255, 0.7)",
+             duration: random(40, 60),
+             ease: "slow (0.7, 0.7, false)",
+             repeat: -1,
+             yoyo: true,
+           }
+         );
+         gsap.fromTo(
+           fireflies[i],
+           {
+             opacity: 0,
+           },
+           {
+             duration: random(1, 5),
+             opacity: 0.9,
+             repeat: -1,
+             yoyo: true,
+           }
+         );
+       }
+       // 2. Bubble
+       var arrBubbles = document.querySelectorAll(".bg-bubbles span");
+       for (var i = 0; i < arrBubbles.length; i++) {
+         var numX = Math.floor(Math.random() * (1200 - -1000 + -1000));
+         var numY = Math.floor(Math.random() * (1200 - -1000 + -1000));
+         arrBubbles[i].style.transformOrigin = numX;
+         arrBubbles[i].style.transformOrigin = numY;
+       }
 
-      // our service
-      let sectionService = document.querySelector(".section-service");
-      let carouselItems = document.querySelectorAll(
-        ".carousel-inner .carousel-item .service"
-      );
-      console.log($(".carousel-inner .carousel-item .service"));
-      $(".carousel-inner .carousel-item .service").tilt({
-        glare: true,
-        maxGlare: 0.5,
-     
-      });
+       // our service
+       let sectionService = document.querySelector(".section-service");
+       let carouselItems = document.querySelectorAll(
+         ".carousel-inner .carousel-item .service"
+       );
+       console.log($(".carousel-inner .carousel-item .service"));
+       $(".carousel-inner .carousel-item .service").tilt({
+         glare: true,
+         maxGlare: 0.5,
 
-      gsap.from(carouselItems ,{
-        scrollTrigger: {
-          trigger: sectionService,
-          start: "top center",
-        },
-        onComplete: () => {
-          let tl = gsap.timeline()
-          for(let carouselItem of carouselItems  ){
-            tl.from(carouselItem, {
-              y: "100vh",
-              duration : 1,
-              ease: "power1.out"
-            })
-          }
+       });
+       aniSection(carouselItems, sectionService,  0 ,100)
+      function aniSection(targets , triggerScr , valueX, valueY){
+         gsap.to(targets ,{
+         scrollTrigger: {
+           trigger: triggerScr,
+           start: "top center",
+         },
 
-        }
-      })
+         onComplete: () => {
+           let tl = gsap.timeline()
+           for(let target of targets  ){
+             tl.to(target, {
+               y: "0vh",
+               x : "0vw",
+               duration : 0.4,
+               ease: "power1.out"
+             })
+           }
+
+         }
+       })
+       gsap.to(targets ,{
+        duration: 0,
+         onComplete: () => {
+           let tl = gsap.timeline()
+           for(let target of targets  ){
+             tl.to(target, {
+               x: valueX + "vw",
+               y: valueY + "vh",
+               duration : 0,
+               ease: "power1.out"
+             })
+           }
+
+         }
+       })}
+
+
+       // sectionTeam
+       let sectionTeam = document.querySelector('.section-team')
+       let listTeam = document.querySelectorAll('.section-team .item-team ')
+       aniSection(listTeam , sectionTeam , 100 , 0)
     </script>
   </body>
 </html>
