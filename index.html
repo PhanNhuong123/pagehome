@@ -3134,17 +3134,35 @@
         arrBubbles[i].style.transformOrigin = numY;
       }
 
-      // 3d effect
-      let video;
-      let carouselItem = document.querySelectorAll(
+      // our service
+      let sectionService = document.querySelector(".section-service");
+      let carouselItems = document.querySelectorAll(
         ".carousel-inner .carousel-item .service"
-      )[0];
+      );
       console.log($(".carousel-inner .carousel-item .service"));
       $(".carousel-inner .carousel-item .service").tilt({
         glare: true,
         maxGlare: 0.5,
+     
       });
-      ti.console.log(carouselItem);
+
+      gsap.from(carouselItems ,{
+        scrollTrigger: {
+          trigger: sectionService,
+          start: "top center",
+        },
+        onComplete: () => {
+          let tl = gsap.timeline()
+          for(let carouselItem of carouselItems  ){
+            tl.from(carouselItem, {
+              y: "100vh",
+              duration : 1,
+              ease: "power1.out"
+            })
+          }
+
+        }
+      })
     </script>
   </body>
 </html>
