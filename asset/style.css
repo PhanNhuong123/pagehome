@@ -692,7 +692,7 @@ span:hover {
 }
 
 hr.solid {
-    border-top: 2px solid #0855F8;
+    border-top: 2px solid #b0c9ff;
     width: 80px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -1191,6 +1191,7 @@ background-color: red;
 .bg-bubbles {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .bg-bubbles span {
@@ -1306,12 +1307,216 @@ background-color: red;
     }
 }
 
+
+/* 3. Wave line */
+
+.waveline {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    overflow: hidden;
+}
+
+.waveline .wave-item {
+    width: 100%;
+    height: 25%;
+    z-index: 4;
+    position: absolute;
+    animation: move-forever 35s ease-in-out infinite;
+    transform: scaleX(3);
+}
+
+.waveline .wave-item1 {
+    background-image: url(wave1.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.waveline .wave-item2 {
+    background: url(wave2.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.waveline .wave-item3 {
+    background-image: url(wave3.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.waveline .wave-item4 {
+    background-image: url(wave4.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        top: 1%;
+        transform: scaleX(8);
+    }
+    50% {
+        top: 20%;
+        transform: scaleX(6);
+    }
+    100% {
+        top: 1%;
+        transform: scaleX(10);
+    }
+}
+
+
+/* 4. Matrix light and hover */
+
+.matrix {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.matrix .matrix-item {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffffdc;
+    position: relative;
+    animation: scale2 2000ms linear infinite;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.matrix .matrix-item:nth-child(1) {
+    top: 73%;
+    left: 13%;
+    animation-duration: 3.7s;
+    animation-delay: -1s;
+}
+
+.matrix .matrix-item:nth-child(2) {
+    top: 62%;
+    left: 19%;
+    animation-duration: 4.6s;
+    animation-delay: -7s;
+}
+
+.matrix .matrix-item:nth-child(3) {
+    top: 65%;
+    left: 24%;
+    animation-duration: 5.8s;
+    animation-delay: -4.4s;
+}
+
+.matrix .matrix-item:nth-child(4) {
+    top: 65%;
+    left: 39%;
+    animation-duration: 6.6s;
+    animation-delay: -8.5s;
+}
+
+.matrix .matrix-item:nth-child(5) {
+    top: 72%;
+    left: 54%;
+    animation-duration: 7.5s;
+    animation-delay: -11.3s;
+}
+
+.matrix .matrix-item:nth-child(6) {
+    top: 55%;
+    left: 67%;
+    animation-duration: 8.7s;
+    animation-delay: -7.7s;
+}
+
+.matrix .matrix-item:nth-child(7) {
+    top: 65%;
+    left: 73%;
+    animation-duration: 9.4s;
+    animation-delay: -2s;
+}
+
+.matrix .matrix-item img,
+.matrix .matrix-item .card-detail .card-subtitle {
+    display: none;
+}
+
+.matrix .matrix-item .card-detail .card-title {
+    color: #fff;
+}
+
+.matrix .matrix-item>div {
+    position: absolute;
+    bottom: 2rem;
+    left: -3.75rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.matrix .matrix-item:hover {
+    background-color: rgb(255, 81, 0);
+}
+
+.matrix .matrix-item:hover img {
+    display: block;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    position: absolute;
+    background-color: #fff;
+    left: -50%;
+    top: -50%;
+    border-radius: 10%;
+    /* border-radius: 50%; */
+}
+
+.matrix .matrix-item:hover .card-detail .card-subtitle,
+.matrix .matrix-item:hover .card-detail .card-title {
+    display: block;
+    color: #000;
+    padding: 10px;
+}
+
+.matrix .matrix-item:hover .card-detail {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
 @keyframes scale {
     0% {
         transform: scale(1);
     }
     50% {
         transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -1354,7 +1559,7 @@ background-color: red;
 .section-best-service .bg-content .wrap-text .text h1 {
     font-size: 40px;
     font-weight: bold;
-    color: #1E1E1E;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 1023px) {

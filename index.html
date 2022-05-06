@@ -478,6 +478,71 @@
                         <span></span>
                         <span></span>
                     </div>
+                    <div class="waveline"></div>
+                    <div class="matrix">
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/ai.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">AI system</div>
+                                <div class="card-subtitle">
+                                    プロジェクトにアサイン※日本語できるエンジニア一緒に仕
+                                    <br /> ディープラーニング（object detection）<br />チャットボット
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/app-dev.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">App development</div>
+                                <div class="card-subtitle">
+                                    アプリ開発経験は豊富で設計からリリース後（保持作業）まで担当させていただきます。 得意
+                                    <br /> ・iOS Native<br /> ・Android Native<br /> ・React Native<br /> ・Flutter <br /> ・Xamarin <br />・Ionic
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/web-con.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">WEB construction</div>
+                                <div class="card-subtitle">Webサイト開発は得意です</div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/livestream.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">Livestream system</div>
+                                <div class="card-subtitle">
+                                    ライブ配信アプリ開発経験が豊富でサーバー構築からアプリ制作まで担当させて頂きます。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/video.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">Video making</div>
+                                <div class="card-subtitle">
+                                    Webでビデオ作成ビデオ編集を簡単で操作できるシステム開発経験があります。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/ar.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">AR/VR system</div>
+                                <div class="card-subtitle">AR/VR実績もあります。</div>
+                            </div>
+                        </div>
+                        <div class="matrix-item">
+                            <img src="https://gotechjsc.com/wp-content/themes/go-tech/assets/images/services/business.png" alt="" />
+                            <div class="card-detail">
+                                <div class="card-title">Business/User matching</div>
+                                <div class="card-subtitle">
+                                    Web・アプリマッチング系開発は得意です
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="cursor"></div> -->
+                    </div>
                 </div>
                 <div class="bg-content">
                     <div class="container">
@@ -496,6 +561,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
@@ -2300,13 +2366,50 @@
             );
         }
         // 2. Bubble
-        var arrBubbles = document.querySelectorAll(".bg-bubbles span");
+        {
+            {
+                /*  var arrBubbles = document.querySelectorAll(".bg-bubbles span");
         for (var i = 0; i < arrBubbles.length; i++) {
             var numX = Math.floor(Math.random() * (1200 - -1000 + -1000));
             var numY = Math.floor(Math.random() * (1200 - -1000 + -1000));
             arrBubbles[i].style.transformOrigin = numX;
             arrBubbles[i].style.transformOrigin = numY;
+        }  */
+            }
         }
+
+        // 3. Wave
+        const totalWave = 30;
+        for (var i = 0; i < totalWave; i++) {
+            var w = document.createElement("div");
+            var randomNum = Math.floor(Math.random() * 4 - 1) + 1;
+            switch (randomNum) {
+                case 1:
+                    w.setAttribute("class", "wave-item wave-item1");
+                    break;
+                case 2:
+                    w.setAttribute("class", "wave-item wave-item2");
+                    break;
+                case 3:
+                    w.setAttribute("class", "wave-item wave-item3");
+                    break;
+                case 4:
+                    w.setAttribute("class", "wave-item wave-item4");
+                    break;
+                default:
+                    w.setAttribute("class", "wave-item wave-item1");
+                    break;
+            }
+            var topN = Math.floor(Math.random() * 20 - 1) + 1;
+            var durationN = Math.floor(Math.random() * 30 - 10) + 10;
+            var delayN = Math.floor(Math.random() * 5 - 2) + 2;
+
+            w.style.top = topN + "%";
+            w.style.animationDelay = delayN + "s";
+            w.style.animationDuration = durationN + "s";
+            document.getElementsByClassName("waveline")[0].appendChild(w);
+        }
+        // 4. Cursor Hover
     </script>
 </body>
 
