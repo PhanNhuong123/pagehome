@@ -700,7 +700,7 @@ span:hover {
 }
 /* nhuong change */
 hr.solid {
-    border-top: 2px solid #0855F8;
+    border-top: 2px solid #b0c9ff;
     width: 80px;
     margin-top: -14px;
     margin-bottom: 15px;
@@ -1204,6 +1204,7 @@ background-color: red;
 .bg-bubbles {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .bg-bubbles span {
@@ -1319,6 +1320,201 @@ background-color: red;
     }
 }
 
+
+/* 3. Wave line */
+
+.waveline {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    overflow: hidden;
+}
+
+.waveline .wave-item {
+    width: 100%;
+    height: 25%;
+    z-index: 4;
+    position: absolute;
+    animation: move-forever 35s ease-in-out infinite;
+    transform: scaleX(3);
+}
+
+.waveline .wave-item1 {
+    background-image: url(wave1.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.waveline .wave-item2 {
+    background: url(wave2.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.waveline .wave-item3 {
+    background-image: url(wave3.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.waveline .wave-item4 {
+    background-image: url(wave4.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        top: 1%;
+        transform: scaleX(8);
+    }
+    50% {
+        top: 20%;
+        transform: scaleX(6);
+    }
+    100% {
+        top: 1%;
+        transform: scaleX(10);
+    }
+}
+
+
+/* 4. Matrix light and hover */
+
+.matrix {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.matrix .matrix-item {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #ffffffdc;
+    position: relative;
+    animation: scale2 2000ms linear infinite;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.matrix .matrix-item:nth-child(1) {
+    top: 73%;
+    left: 13%;
+    animation-duration: 3.7s;
+    animation-delay: -1s;
+}
+
+.matrix .matrix-item:nth-child(2) {
+    top: 62%;
+    left: 19%;
+    animation-duration: 4.6s;
+    animation-delay: -7s;
+}
+
+.matrix .matrix-item:nth-child(3) {
+    top: 65%;
+    left: 24%;
+    animation-duration: 5.8s;
+    animation-delay: -4.4s;
+}
+
+.matrix .matrix-item:nth-child(4) {
+    top: 65%;
+    left: 39%;
+    animation-duration: 6.6s;
+    animation-delay: -8.5s;
+}
+
+.matrix .matrix-item:nth-child(5) {
+    top: 72%;
+    left: 54%;
+    animation-duration: 7.5s;
+    animation-delay: -11.3s;
+}
+
+.matrix .matrix-item:nth-child(6) {
+    top: 55%;
+    left: 67%;
+    animation-duration: 8.7s;
+    animation-delay: -7.7s;
+}
+
+.matrix .matrix-item:nth-child(7) {
+    top: 65%;
+    left: 73%;
+    animation-duration: 9.4s;
+    animation-delay: -2s;
+}
+
+.matrix .matrix-item img,
+.matrix .matrix-item .card-detail .card-subtitle {
+    display: none;
+}
+
+.matrix .matrix-item .card-detail .card-title {
+    text-transform: capitalize;
+}
+
+.matrix .matrix-item .card-detail .card-title,
+.matrix .matrix-item .card-detail .card-subtitle {
+    color: #fff;
+    position: relative;
+}
+
+.matrix .matrix-item .card-detail {
+    position: relative;
+    bottom: 7rem;
+    left: -3.75rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.matrix .matrix-item:hover img {
+    display: block;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    position: absolute;
+    background-color: #fff;
+    left: 0.35rem;
+    bottom: 8rem;
+    border-radius: 10%;
+    /* border-radius: 50%; */
+    z-index: 999;
+}
+
+.matrix .matrix-item:hover .card-detail .card-subtitle,
+.matrix .matrix-item:hover .card-detail .card-title {
+    display: block;
+    color: #000;
+    padding: 10px;
+}
+
+.matrix .matrix-item:hover .card-detail {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
 @keyframes scale {
     0% {
         transform: scale(1);
@@ -1330,6 +1526,111 @@ background-color: red;
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes scale2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.circle-3d {
+    position: relative;
+    top: 60%;
+}
+
+.content-button {
+    position: absolute;
+    top: 38%;
+    left: 7.1rem;
+    font-size: 0.7em;
+    color: #000;
+    background: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.circle-3d:hover .content-button {
+    opacity: 1;
+}
+
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.leo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.blue-orbit {
+    width: 165px;
+    height: 165px;
+    border: 1px solid #91daffa5;
+    -webkit-animation: spin3D 3s linear .2s infinite;
+}
+
+.green-orbit {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #91ffbfa5;
+    -webkit-animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #ffca91a5;
+    -webkit-animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
+    -webkit-animation: spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+    transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+    transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.w3 {
+    transform: rotate3D(.5, 1, 2, 90deg);
+}
+
+@keyframes spin3D {
+    from {
+        transform: rotate3d(.5, .5, .5, 360deg);
+    }
+    to {
+        transform: rotate3d(0deg);
     }
 }
 
@@ -1369,7 +1670,7 @@ background-color: red;
 .section-best-service .bg-content .wrap-text .text h1 {
     font-size: 40px;
     font-weight: bold;
-    color: #1E1E1E;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 1023px) {
