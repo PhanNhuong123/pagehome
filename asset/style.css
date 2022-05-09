@@ -30,6 +30,7 @@ body {
     0% {
         -webkit-transform: translateX(900px);
     }
+
     100% {
         -webkit-transform: translateX(0px);
     }
@@ -44,6 +45,7 @@ body {
     0% {
         -webkit-transform: translateX(-900px);
     }
+
     100% {
         -webkit-transform: translateX(0px);
     }
@@ -133,6 +135,7 @@ body {
         line-height: 17.38px;
         padding: 0 28px;
     }
+
     .select-wrap .select-content p {
         font-size: 14px;
         line-height: 17.38px;
@@ -350,6 +353,7 @@ a.btn:hover::after {
     .wrap-btn a.btn {
         line-height: 1.7em;
     }
+
     a.btn:hover::after {
         left: 120px;
     }
@@ -551,18 +555,22 @@ a.btn:hover::after {
     .site-header .wrap-header .side-bar {
         padding: 0;
     }
+
     .site-header .wrap-header .navbar {
         padding: 0;
     }
+
     .site-header .wrap-header .navbar .navbar-menu {
         position: absolute;
         right: 15px;
         top: 15px;
     }
+
     .site-header .wrap-header .navbar .navbar-toggler {
         border: none;
         outline: none;
     }
+
     .site-header .wrap-header .navbar .navbar-nav {
         position: absolute;
         top: 40px;
@@ -684,11 +692,13 @@ span:hover {
     font-weight: 500;
     font-size: 3rem;
 }
+
 /* nhuong change */
 .wrap-banner-content span:hover {
-    transition:cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.35s;
-    font-size: 1em; 
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.35s;
+    font-size: 1em;
 }
+
 /* end nhuong */
 
 @media only screen and (max-width: 1023px) {
@@ -815,6 +825,7 @@ hr.solid {
     .section-banner .wrap-banner-content .text-content {
         max-width: 300px;
     }
+
     .wrap-banner-content .text-content h1 {
         height: 30px
     }
@@ -1186,12 +1197,15 @@ background-color: red;
     0% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     75% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -1381,10 +1395,12 @@ background-color: red;
         top: 1%;
         transform: scaleX(8);
     }
+
     50% {
         top: 20%;
         transform: scaleX(6);
     }
+
     100% {
         top: 1%;
         transform: scaleX(10);
@@ -1518,9 +1534,11 @@ background-color: red;
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.5);
     }
+
     100% {
         transform: scale(1);
     }
@@ -1530,9 +1548,11 @@ background-color: red;
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
@@ -2518,6 +2538,7 @@ article .wrap-btn-blue a.btn {
     article .wrap-btn-blue a.btn {
         padding: 8px 35px 8px 35px;
     }
+
     article .wrap-btn-blue a.btn .icon {
         right: -27px;
     }
@@ -2660,6 +2681,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .custom-pagination .wrap-btn-blue .next,
     .custom-pagination .wrap-btn-blue .prev {
         padding: 8px 35px 8px 30px;
@@ -2672,6 +2694,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .custom-pagination .wrap-btn-blue .next .icon,
     .custom-pagination .wrap-btn-blue .prev .icon {
         right: -18px;
@@ -2689,6 +2712,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .carousel .carousel-control-next,
     .carousel .carousel-control-prev {
         top: 29%;
@@ -2745,6 +2769,7 @@ article .card-service:hover .actions {
 }
 
 @media only screen and (max-width: 1023px) {
+
     .carousel .carousel-control-prev-icon,
     .carousel .carousel-control-next-icon {
         background: #0855F8 url("assets/images/icons/arrow-right-mb.png") no-repeat center;
@@ -2795,6 +2820,7 @@ article .card-service:hover .actions {
         width: 24px;
         height: 24px;
     }
+
     #mainCarousel .carousel__nav .carousel__button svg {
         width: var(--carousel-button-svg-width-mb, 50%);
         height: var(--carousel-button-svg-height-mb, 50%);
@@ -2841,9 +2867,11 @@ article .card-service:hover .actions {
     0% {
         with: 0em
     }
+
     5% {
         width: 0em;
     }
+
     100% {
         width: 7em;
     }
@@ -3032,15 +3060,19 @@ article .card-service:hover .actions {
     0% {
         border-color: #007bff;
     }
+
     25% {
         border-color: #e36c17;
     }
+
     50% {
         border-color: #dff04d;
     }
+
     75% {
         border-color: #ec7dd9;
     }
+
     100% {
         border-color: #007bff;
     }
@@ -3071,9 +3103,9 @@ article .card-service:hover .actions {
 
 ::-webkit-scrollbar {
     width: auto
-    /* margin-left: 10.25em; */
-    /* padding-right: 10px; */
-    /* margin-block: 0.5em; */
+        /* margin-left: 10.25em; */
+        /* padding-right: 10px; */
+        /* margin-block: 0.5em; */
 }
 
 ::-webkit-scrollbar-track {
@@ -3105,47 +3137,62 @@ article .card-service:hover .actions {
     padding-right: 10px;
     /* margin-block: 0.5em; */
 }
+
 /*  
 modal Nav
  */
- .navbar-collapse{
-     display: none;
-     opacity: 0;
-     
- }
+.navbar-expand-lg .navbar-collapse {
+    display: none;
+    opacity: 0;
+
+}
+
+@media (min-width: 992px) {
+
+    .navbar-expand-lg .navbar-collapse {
+       opacity: 1 !important;
+    }
+}
+
 /* meet our team  , section-team nhuong*/
 .section-team .card {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px ; 
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.24s; 
-    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.24s;
+
 }
+
 .section-team .card:hover {
     border: 1px solid #007bff;
     animation: animationColor linear 4s infinite;
     border-radius: 4px;
     transform: scale(1.02);
 }
+
 /* section product */
 
 .section-product .container .hide-mb {
     transform-style: preserve-3d;
     transform: translateZ(20px)
 }
+
 .section-product {
     background: linear-gradient(-45deg, #ee765216, #e73c7e14, #23a5d514, #23d5ab11);
-	background-size: 400% 400%;
-	animation: gradient 4s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 4s ease infinite;
 }
+
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .block1 {
@@ -3290,6 +3337,7 @@ modal Nav
 }
 
 @keyframes animated {
+
     /* Animation Bubble */
     /* 0% {
         opacity: 0;
@@ -3327,9 +3375,11 @@ modal Nav
         -ms-transform: scale(1.5) translateY(0);
         -o-transform: scale(1.5) translateY(0);
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
