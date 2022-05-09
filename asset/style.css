@@ -3153,7 +3153,11 @@ modal Nav
        opacity: 1 !important;
     }
 }
-
+@media (min-width: 1200px){
+    .container{
+        margin-left: 12vw;
+    }
+}
 /* meet our team  , section-team nhuong*/
 .section-team .card {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
@@ -3194,6 +3198,8 @@ modal Nav
         background-position: 0% 50%;
     }
 }
+
+
 
 .block1 {
     background-color: red;
