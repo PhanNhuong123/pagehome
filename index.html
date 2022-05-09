@@ -16,6 +16,8 @@
     <link rel="alternate" href="https://gotechjsc.com/" hreflang="ja" />
     <link rel="alternate" href="https://gotechjsc.com/en/" hreflang="en" />
     <link rel="alternate" href="https://gotechjsc.com/vi/" hreflang="vi" />
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="dns-prefetch" href="//s.w.org" />
     <link
       rel="alternate"
@@ -191,11 +193,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light">
                   <div class="navbar-menu">
                     <button class="navbar-toggler" type="button">
-                      <lord-icon
-                        src="https://cdn.lordicon.com/jtqpkhoh.json"
-                        trigger="morph"
-                      >
-                      </lord-icon>
+                      <i class="fa-solid fa-bars"></i>
                     </button>
                   </div>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -2690,9 +2688,10 @@
       </footer>
     </div>
     <script
-      src="https://gotechjsc.com/wp-content/themes/go-tech/assets/js/jquery-3.4.1.slim.min.js?ver=1.0.2"
-      id="go-tech-jquery-js"
+    src="https://gotechjsc.com/wp-content/themes/go-tech/assets/js/jquery-3.4.1.slim.min.js?ver=1.0.2"
+    id="go-tech-jquery-js"
     ></script>
+    
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -3351,6 +3350,8 @@
       btnNa.addEventListener("click", () => {
         console.log("click");
         if (show) {
+          btnNa.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+
           modalNav.style.display = "block";
           show = !show;
           gsap.to(modalNav, {
@@ -3359,7 +3360,10 @@
             duration: 0.6,
           });
         } else {
+
           show = !show;
+          btnNa.innerHTML = '<i class="fa-solid fa-bars"></i>'
+       
           gsap.to(modalNav, {
             opacity: 0,
             ease: "power.out1",
@@ -3369,6 +3373,13 @@
             },
           });
         }
+        gsap.from(
+            btnNa, {
+              scale: 0 ,
+              duration: 0.34,
+              ease: "power1.out"
+            }
+          )
       });
       // section product
       $(".section-product .container").tilt({

@@ -3154,9 +3154,12 @@ modal Nav
     }
 }
 @media (min-width: 1200px){
-    .container{
+  .wrap-header  .container{
         margin-left: 12vw;
     }
+}
+.wrap-header  .container i {
+    font-size: xx-large;
 }
 /* meet our team  , section-team nhuong*/
 .section-team .card {
